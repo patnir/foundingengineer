@@ -10,6 +10,8 @@ const siteMetadata = {
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
   email: 'rahul@foundingengineer.com',
+  github: 'https://github.com/patnir',
+  twitter: 'https://twitter.com/iAmRahulPatni',
   linkedin: 'https://www.linkedin.com/in/rahulpatni/',
   locale: 'en-US',
   analytics: {
