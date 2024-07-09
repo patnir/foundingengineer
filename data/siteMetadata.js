@@ -8,7 +8,7 @@ const siteMetadata = {
   siteUrl: 'https://foundingengineer.com',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
-  socialBanner: '/static/images/twitter-card.png',
+  socialBanner: '/static/images/avatar.png',
   // email: 'rahul@foundingengineer.com',
   github: 'https://github.com/patnir',
   twitter: 'https://twitter.com/iAmRahulPatni',
