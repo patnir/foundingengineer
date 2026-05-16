@@ -313,6 +313,14 @@ body::after {
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
+a.project-title-row {
+  text-decoration: none;
+  color: inherit;
+  transition: color 120ms ease;
+}
+a.project-title-row:hover .project-title {
+  color: var(--accent);
+}
 
 /* ── footer ───────────────────────────────────────────────────────────── */
 

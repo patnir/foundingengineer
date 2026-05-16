@@ -186,9 +186,9 @@ function ProjectsIndex() {
         </span>
       </div>
       <ol style={{ listStyle: "none", padding: 0, margin: "28px 0 0" }}>
-        {PROJECTS.map((p) => (
-          <li key={p.n} className="project-row">
-            <div className="project-title-row">
+        {PROJECTS.map((p) => {
+          const titleRowContent = (
+            <>
               <span
                 className="serif"
                 style={{
@@ -200,49 +200,67 @@ function ProjectsIndex() {
                 {p.n}.
               </span>
               <span className="serif project-title">{p.title}</span>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+            </>
+          );
+          return (
+            <li key={p.n} className="project-row">
+              {p.href ? (
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-title-row"
+                >
+                  {titleRowContent}
+                </a>
+              ) : (
+                <div className="project-title-row">{titleRowContent}</div>
+              )}
               <div
-                style={{
-                  fontSize: 15,
-                  color: "var(--ink)",
-                  lineHeight: 1.5,
-                }}
+                style={{ display: "flex", flexDirection: "column", gap: 8 }}
               >
-                {p.blurb}
+                <div
+                  style={{
+                    fontSize: 15,
+                    color: "var(--ink)",
+                    lineHeight: 1.5,
+                  }}
+                >
+                  {p.blurb}
+                </div>
+                <div
+                  className="mono"
+                  style={{
+                    fontSize: 11,
+                    color: "var(--muted)",
+                    display: "flex",
+                    gap: 14,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {p.href ? (
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "var(--accent)",
+                        textDecoration: "underline",
+                        textUnderlineOffset: 2,
+                      }}
+                    >
+                      {p.url}
+                    </a>
+                  ) : (
+                    <span>{p.url}</span>
+                  )}
+                  <span>·</span>
+                  <span>{p.tag}</span>
+                </div>
               </div>
-              <div
-                className="mono"
-                style={{
-                  fontSize: 11,
-                  color: "var(--muted)",
-                  display: "flex",
-                  gap: 14,
-                  flexWrap: "wrap",
-                }}
-              >
-                {p.href ? (
-                  <a
-                    href={p.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      color: "var(--accent)",
-                      textDecoration: "underline",
-                      textUnderlineOffset: 2,
-                    }}
-                  >
-                    {p.url}
-                  </a>
-                ) : (
-                  <span>{p.url}</span>
-                )}
-                <span>·</span>
-                <span>{p.tag}</span>
-              </div>
-            </div>
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ol>
     </section>
   );
