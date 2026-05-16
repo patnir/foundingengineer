@@ -14,6 +14,13 @@ function EditorialHero() {
           <a href="#work">work</a>
           <a href="#experience">experience</a>
           <a href="#about">about</a>
+          <a
+            href="https://blog.foundingengineer.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            blog ↗
+          </a>
           <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
             book a call ↗
           </a>
