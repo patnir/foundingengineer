@@ -171,7 +171,7 @@ body::after {
 /* ── hero ─────────────────────────────────────────────────────────────── */
 
 .hero-title {
-  font-size: clamp(40px, 8vw, 96px);
+  font-size: clamp(30px, 8vw, 96px);
   line-height: 1;
   margin: 0;
   font-weight: 400;
@@ -306,6 +306,15 @@ body::after {
   margin-bottom: 10px;
   flex-wrap: wrap;
 }
+a.exp-company-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: color 120ms ease;
+}
+a.exp-company-link:hover {
+  color: var(--accent);
+}
 .exp-company {
   font-size: clamp(28px, 5vw, 38px);
   font-weight: 500;
@@ -318,6 +327,85 @@ body::after {
   line-height: 1.55;
   max-width: 460px;
   margin-top: 16px;
+}
+
+/* ── capabilities grid (Round 9 · Option A) ───────────────────────────── */
+
+.cap-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: clamp(28px, 4vw, 36px);
+  border-top: 1px solid #d8d1c2;
+}
+@media (min-width: 1024px) {
+  .cap-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cap-col {
+  padding: 28px 24px 16px;
+  border-bottom: 1px solid #d8d1c2;
+  border-right: 1px solid #d8d1c2;
+}
+.cap-col:nth-child(2n) {
+  border-right: none;
+}
+@media (min-width: 1024px) {
+  .cap-col {
+    border-bottom: none;
+    border-right: 1px solid #d8d1c2;
+  }
+  .cap-col:nth-child(2n) {
+    border-right: 1px solid #d8d1c2;
+  }
+  .cap-col:last-child {
+    border-right: none;
+  }
+}
+
+.cap-col-title {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  margin: 0 0 18px;
+}
+
+.cap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cap-item {
+  padding: 10px 0;
+  border-top: 1px solid #ebe5d8;
+}
+
+.cap-item-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.cap-item-meta {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+}
+
+.cap-footer-note {
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 2vw, 22px);
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 32px 0 0;
+  max-width: 720px;
 }
 
 /* ── projects ─────────────────────────────────────────────────────────── */

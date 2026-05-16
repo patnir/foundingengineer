@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { EXPERIENCE, PROJECTS } from "./data";
+import { CAPABILITIES, EXPERIENCE, PROJECTS } from "./data";
 
 const BOOKING_URL = "https://calendly.com/rahulpatni/30min";
 
@@ -29,15 +29,16 @@ function EditorialHero() {
       </div>
 
       <h1 className="serif hero-title">
-        Most small businesses
+        <span style={{ color: "var(--muted)" }}>
+          You don&apos;t need an agency.
+        </span>
         <br />
-        don&apos;t need a{" "}
-        <em style={{ fontStyle: "italic", color: "var(--accent)" }}>team</em>.
+        You need{" "}
+        <span style={{ color: "var(--accent)", whiteSpace: "nowrap" }}>
+          one engineer + AI
+        </span>
         <br />
-        They need{" "}
-        <span className="underline-sketch">one AI-enabled engineer</span>
-        <br />
-        who actually ships.
+        <em style={{ fontStyle: "italic" }}>in the trenches</em> with you.
       </h1>
 
       <div id="about" className="greeting-row">
@@ -58,9 +59,7 @@ function EditorialHero() {
 
       <div className="hero-grid">
         <p style={{ fontSize: 17, lineHeight: 1.55, margin: 0 }}>
-          Not a contractor. Not an agency. Just one person, sleeves up,
-          building it with you. Apps, web, infra, the boring glue — whatever
-          the week needs.
+          Just one person, sleeves up, building it with you. Apps, web, infra, design, data, and the glue.
         </p>
       </div>
 
@@ -119,6 +118,51 @@ function EditorialHero() {
 }
 
 
+function CapabilitiesGrid() {
+  return (
+    <section id="capabilities" className="section">
+      <div className="section-head">
+        <h2
+          className="mono"
+          style={{
+            fontSize: 12,
+            margin: 0,
+            color: "var(--muted)",
+            letterSpacing: "0.12em",
+          }}
+        >
+          № 02 · WHAT I CAN BUILD WITH YOU
+        </h2>
+        <span
+          className="mono"
+          style={{ fontSize: 11, color: "var(--muted)" }}
+        >
+          END-TO-END · ONE PERSON
+        </span>
+      </div>
+      <div className="cap-grid">
+        {CAPABILITIES.map((col) => (
+          <div key={col.title} className="cap-col">
+            <h3 className="serif cap-col-title">{col.title}</h3>
+            <ul className="cap-list">
+              {col.items.map((it) => (
+                <li key={it.label} className="cap-item">
+                  <div className="cap-item-label">{it.label}</div>
+                  <div className="mono cap-item-meta">{it.meta}</div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p className="serif cap-footer-note">
+        The whole stack — design, code, integrations, data —
+        by one person who decides what&apos;s worth doing.
+      </p>
+    </section>
+  );
+}
+
 function ExperienceGrid() {
   return (
     <section id="experience" className="section">
@@ -134,12 +178,6 @@ function ExperienceGrid() {
         >
           THE RECEIPTS
         </h2>
-        <span
-          className="mono"
-          style={{ fontSize: 11, color: "var(--muted)" }}
-        >
-          FULL CV ON LINKEDIN ↗
-        </span>
       </div>
 
       <div className="exp-grid">
@@ -170,7 +208,18 @@ function ExperienceGrid() {
                   </span>
                 )}
               </div>
-              <div className="serif exp-company">{e.company}</div>
+              {e.href ? (
+                <a
+                  href={e.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="serif exp-company exp-company-link"
+                >
+                  {e.company}
+                </a>
+              ) : (
+                <div className="serif exp-company">{e.company}</div>
+              )}
               <div className="exp-note">{e.note}</div>
             </div>
           );
@@ -318,6 +367,7 @@ export default function Home() {
   return (
     <main style={{ position: "relative", zIndex: 0 }}>
       <EditorialHero />
+      <CapabilitiesGrid />
       <ProjectsIndex />
       <ExperienceGrid />
       <SiteFooter />
