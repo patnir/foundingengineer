@@ -34,7 +34,8 @@ function EditorialHero() {
         don&apos;t need a{" "}
         <em style={{ fontStyle: "italic", color: "var(--accent)" }}>team</em>.
         <br />
-        They need <span className="underline-sketch">one engineer</span>
+        They need{" "}
+        <span className="underline-sketch">one AI-enabled engineer</span>
         <br />
         who actually ships.
       </h1>
