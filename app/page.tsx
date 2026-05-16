@@ -300,7 +300,7 @@ function ProjectsIndex() {
             letterSpacing: "0.12em",
           }}
         >
-          INDEX OF THINGS I&apos;VE SHIPPED ON THE SIDE
+          WHAT WE&apos;VE SHIPPED
         </h2>
         <span
           className="mono"
