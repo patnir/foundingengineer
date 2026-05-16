@@ -40,6 +40,47 @@ function EditorialHero() {
         who actually ships.
       </h1>
 
+      <div id="about" className="greeting-row">
+        <Image
+          src="/avatar.jpg"
+          alt="Rahul Patni"
+          width={120}
+          height={120}
+          className="greeting-avatar"
+        />
+        <div className="greeting-text">
+          <h2 className="greeting-name">
+            Hi, I&apos;m{" "}
+            <span style={{ color: "var(--accent)" }}>Rahul</span>.
+          </h2>
+          <p className="mono greeting-socials">
+            <a
+              href="https://x.com/iamrahulpatni"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              x ↗
+            </a>
+            <span className="sep">·</span>
+            <a
+              href="https://www.linkedin.com/in/rahulpatni/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin ↗
+            </a>
+            <span className="sep">·</span>
+            <a
+              href="https://github.com/patnir"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github ↗
+            </a>
+          </p>
+        </div>
+      </div>
+
       <div className="hero-grid">
         <p style={{ fontSize: 17, lineHeight: 1.55, margin: 0 }}>
           Not a contractor. Not an agency. Just one person, sleeves up,
@@ -160,31 +201,6 @@ function ExperienceGrid() {
             </div>
           );
         })}
-      </div>
-    </section>
-  );
-}
-
-function AboutSection() {
-  return (
-    <section id="about" className="section">
-      <div className="about-greeting">
-        <Image
-          src="/avatar.jpg"
-          alt="Rahul Patni"
-          width={120}
-          height={120}
-          className="about-avatar"
-        />
-        <div className="about-greeting-text">
-          <h2 className="about-greeting-title">
-            Hi, I&apos;m{" "}
-            <span style={{ color: "var(--accent)" }}>Rahul</span>.
-          </h2>
-          <p className="mono about-tagline">
-            Tech Lead @ Coinbase · ex-Ironfish · ex-Fire
-          </p>
-        </div>
       </div>
     </section>
   );
@@ -330,7 +346,6 @@ export default function Home() {
       <EditorialHero />
       <StatsBand />
       <ExperienceGrid />
-      <AboutSection />
       <ProjectsIndex />
       <SiteFooter />
     </main>

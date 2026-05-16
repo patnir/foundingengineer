@@ -322,14 +322,15 @@ a.project-title-row:hover .project-title {
   color: var(--accent);
 }
 
-/* ── about (greeting block) ───────────────────────────────────────────── */
+/* ── greeting block (inside the hero) ─────────────────────────────────── */
 
-.about-greeting {
+.greeting-row {
   display: flex;
   align-items: center;
   gap: clamp(12px, 1.5vw, 18px);
+  margin-top: clamp(24px, 4vw, 36px);
 }
-.about-avatar {
+.greeting-avatar {
   width: clamp(44px, 5vw, 56px);
   height: clamp(44px, 5vw, 56px);
   border-radius: 50%;
@@ -338,25 +339,39 @@ a.project-title-row:hover .project-title {
   display: block;
   flex: 0 0 auto;
 }
-.about-greeting-text {
+.greeting-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
   min-width: 0;
 }
-.about-greeting-title {
+.greeting-name {
   font-size: clamp(22px, 3vw, 30px);
   font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin: 0;
 }
-.about-tagline {
+.greeting-socials {
   font-size: 11px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--muted);
   margin: 0;
-  text-transform: uppercase;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.greeting-socials a {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+.greeting-socials a:hover {
+  color: var(--accent);
+}
+.greeting-socials .sep {
+  opacity: 0.6;
 }
 
 /* ── footer ───────────────────────────────────────────────────────────── */
