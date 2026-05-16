@@ -322,36 +322,41 @@ a.project-title-row:hover .project-title {
   color: var(--accent);
 }
 
-/* ── about ────────────────────────────────────────────────────────────── */
+/* ── about (greeting block) ───────────────────────────────────────────── */
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-  margin-top: clamp(24px, 4vw, 32px);
-  max-width: 760px;
-  align-items: start;
-}
-@media (min-width: 640px) {
-  .about-grid {
-    grid-template-columns: auto 1fr;
-    gap: 36px;
-    align-items: center;
-  }
+.about-greeting {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 18px);
 }
 .about-avatar {
-  width: clamp(140px, 20vw, 180px);
-  height: clamp(140px, 20vw, 180px);
+  width: clamp(44px, 5vw, 56px);
+  height: clamp(44px, 5vw, 56px);
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--ink);
+  border: 1.5px solid var(--ink);
   display: block;
+  flex: 0 0 auto;
 }
-.about-copy {
-  font-size: clamp(15px, 1.6vw, 17px);
-  line-height: 1.55;
-  color: var(--ink);
+.about-greeting-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.about-greeting-title {
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   margin: 0;
+}
+.about-tagline {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin: 0;
+  text-transform: uppercase;
 }
 
 /* ── footer ───────────────────────────────────────────────────────────── */

@@ -167,41 +167,23 @@ function ExperienceGrid() {
 function AboutSection() {
   return (
     <section id="about" className="section">
-      <div className="section-head">
-        <h2
-          className="mono"
-          style={{
-            fontSize: 12,
-            margin: 0,
-            color: "var(--muted)",
-            letterSpacing: "0.12em",
-          }}
-        >
-          ABOUT
-        </h2>
-        <span
-          className="mono"
-          style={{ fontSize: 11, color: "var(--muted)" }}
-        >
-          THE HUMAN BEHIND THIS
-        </span>
-      </div>
-
-      <div className="about-grid">
+      <div className="about-greeting">
         <Image
           src="/avatar.jpg"
           alt="Rahul Patni"
-          width={400}
-          height={400}
+          width={120}
+          height={120}
           className="about-avatar"
-          priority={false}
         />
-        <p className="about-copy">
-          I&apos;m Rahul. The point of this page is to put a face to the work
-          above — so you know there&apos;s a real person on the other end, not
-          an agency or a Slack channel. If anything looks like a fit, the
-          fastest way to find out is a 30-minute call.
-        </p>
+        <div className="about-greeting-text">
+          <h2 className="about-greeting-title">
+            Hi, I&apos;m{" "}
+            <span style={{ color: "var(--accent)" }}>Rahul</span>.
+          </h2>
+          <p className="mono about-tagline">
+            Tech Lead @ Coinbase · ex-Ironfish · ex-Fire
+          </p>
+        </div>
       </div>
     </section>
   );
