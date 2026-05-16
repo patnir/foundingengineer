@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import { PROJECTS, EXPERIENCE, STATS } from "./data";
 
 const PAPER_BG = "#f6f2ea";
+const BOOKING_URL = "https://calendly.com/rahulpatni/30min";
 
 function EditorialHero() {
   return (
@@ -22,7 +23,9 @@ function EditorialHero() {
           <a href="#work">work</a>
           <a href="#experience">experience</a>
           <a href="#about">about</a>
-          <a href="#book">book a call ↗</a>
+          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
+            book a call ↗
+          </a>
         </div>
       </div>
 
@@ -94,7 +97,12 @@ function EditorialHero() {
           gap: 22,
         }}
       >
-        <a href="#book" className="btn">
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn"
+        >
           Book a call →
         </a>
         <span
@@ -409,8 +417,13 @@ function SiteFooter() {
         <div className="serif" style={{ fontSize: 28, fontWeight: 500 }}>
           Got a thing that needs building?
         </div>
-        <a href="#book" className="btn">
-          Book 30 min on Cal.com
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn"
+        >
+          Book 30 min on Calendly
         </a>
       </div>
       <div
