@@ -1,20 +1,11 @@
-import type { CSSProperties } from "react";
 import { PROJECTS, EXPERIENCE, STATS } from "./data";
 
-const PAPER_BG = "#f6f2ea";
 const BOOKING_URL = "https://calendly.com/rahulpatni/30min";
 
 function EditorialHero() {
   return (
-    <section
-      style={{
-        padding: "40px 56px 60px",
-        background: PAPER_BG,
-        color: "var(--ink)",
-        position: "relative",
-      }}
-    >
-      <div className="topnav" style={{ padding: 0, marginBottom: 36 }}>
+    <section className="section hero no-top-border">
+      <div className="topnav" style={{ marginBottom: 36 }}>
         <div className="logo">
           foundingengineer
           <span style={{ color: "var(--accent)" }}>.com</span>
@@ -29,17 +20,7 @@ function EditorialHero() {
         </div>
       </div>
 
-      <h1
-        className="serif"
-        style={{
-          fontSize: 96,
-          lineHeight: 0.98,
-          margin: 0,
-          fontWeight: 400,
-          letterSpacing: "-0.035em",
-          maxWidth: 1080,
-        }}
-      >
+      <h1 className="serif hero-title">
         Most small businesses
         <br />
         don&apos;t need a{" "}
@@ -50,15 +31,7 @@ function EditorialHero() {
         who actually ships.
       </h1>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 56,
-          marginTop: 56,
-          maxWidth: 1080,
-        }}
-      >
+      <div className="hero-grid">
         <p style={{ fontSize: 17, lineHeight: 1.55, margin: 0 }}>
           Not a contractor. Not an agency. Just one person, sleeves up,
           building it with you. Apps, web, infra, the boring glue — whatever
@@ -77,14 +50,7 @@ function EditorialHero() {
         </p>
       </div>
 
-      <div
-        style={{
-          marginTop: 40,
-          display: "flex",
-          alignItems: "center",
-          gap: 22,
-        }}
-      >
+      <div className="hero-cta-row">
         <a
           href={BOOKING_URL}
           target="_blank"
@@ -106,39 +72,11 @@ function EditorialHero() {
 
 function StatsBand() {
   return (
-    <section
-      style={{
-        padding: "0 56px",
-        borderTop: "1.5px solid var(--ink)",
-        background: PAPER_BG,
-      }}
-    >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${STATS.length}, 1fr)`,
-        }}
-      >
-        {STATS.map((s, i) => (
-          <div
-            key={s.label}
-            style={{
-              padding: "32px 24px",
-              borderRight:
-                i < STATS.length - 1 ? "1.5px solid var(--ink)" : "none",
-            }}
-          >
-            <div
-              className="serif"
-              style={{
-                fontSize: 56,
-                fontWeight: 500,
-                lineHeight: 1,
-                letterSpacing: "-0.03em",
-              }}
-            >
-              {s.value}
-            </div>
+    <section className="section stats">
+      <div className="stats-grid">
+        {STATS.map((s) => (
+          <div key={s.label} className="stat-cell">
+            <div className="serif stat-value">{s.value}</div>
             <div
               className="mono"
               style={{
@@ -159,23 +97,8 @@ function StatsBand() {
 
 function ExperienceGrid() {
   return (
-    <section
-      id="experience"
-      style={{
-        padding: "64px 56px 40px",
-        borderTop: "1.5px solid var(--ink)",
-        position: "relative",
-        background: PAPER_BG,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          justifyContent: "space-between",
-          marginBottom: 32,
-        }}
-      >
+    <section id="experience" className="section">
+      <div className="section-head">
         <h2
           className="mono"
           style={{
@@ -195,35 +118,15 @@ function ExperienceGrid() {
         </span>
       </div>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 0,
-          borderTop: "1.5px solid var(--ink)",
-          borderLeft: "1.5px solid var(--ink)",
-        }}
-      >
+      <div className="exp-grid">
         {EXPERIENCE.map((e) => {
           const acquired = e.tag.startsWith("acquired");
-          const cellStyle: CSSProperties = {
-            padding: "28px 28px",
-            borderRight: "1.5px solid var(--ink)",
-            borderBottom: "1.5px solid var(--ink)",
-            position: "relative",
-            minHeight: 180,
-            background: acquired ? "rgba(210,83,42,0.06)" : "transparent",
-          };
           return (
-            <div key={e.company} style={cellStyle}>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "baseline",
-                  justifyContent: "space-between",
-                  marginBottom: 10,
-                }}
-              >
+            <div
+              key={e.company}
+              className={`exp-cell${acquired ? " acquired" : ""}`}
+            >
+              <div className="exp-cell-head">
                 <div
                   className="mono"
                   style={{ fontSize: 11, color: "var(--muted)" }}
@@ -243,28 +146,8 @@ function ExperienceGrid() {
                   </span>
                 )}
               </div>
-              <div
-                className="serif"
-                style={{
-                  fontSize: 38,
-                  fontWeight: 500,
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1,
-                }}
-              >
-                {e.company}
-              </div>
-              <div
-                style={{
-                  fontSize: 13.5,
-                  color: "var(--ink)",
-                  lineHeight: 1.55,
-                  maxWidth: 460,
-                  marginTop: 16,
-                }}
-              >
-                {e.note}
-              </div>
+              <div className="serif exp-company">{e.company}</div>
+              <div className="exp-note">{e.note}</div>
             </div>
           );
         })}
@@ -275,22 +158,8 @@ function ExperienceGrid() {
 
 function ProjectsIndex() {
   return (
-    <section
-      id="work"
-      style={{
-        padding: "60px 56px 24px",
-        borderTop: "1.5px solid var(--ink)",
-        background: PAPER_BG,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "baseline",
-          justifyContent: "space-between",
-          marginBottom: 12,
-        }}
-      >
+    <section id="work" className="section">
+      <div className="section-head">
         <h2
           className="mono"
           style={{
@@ -311,18 +180,8 @@ function ProjectsIndex() {
       </div>
       <ol style={{ listStyle: "none", padding: 0, margin: "28px 0 0" }}>
         {PROJECTS.map((p) => (
-          <li
-            key={p.n}
-            style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr",
-              gap: 56,
-              padding: "26px 0",
-              borderTop: "1px solid #d8d1c2",
-              alignItems: "baseline",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "baseline", gap: 24 }}>
+          <li key={p.n} className="project-row">
+            <div className="project-title-row">
               <span
                 className="serif"
                 style={{
@@ -333,17 +192,7 @@ function ProjectsIndex() {
               >
                 {p.n}.
               </span>
-              <span
-                className="serif"
-                style={{
-                  fontSize: 36,
-                  fontWeight: 400,
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1,
-                }}
-              >
-                {p.title}
-              </span>
+              <span className="serif project-title">{p.title}</span>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <div
@@ -362,6 +211,7 @@ function ProjectsIndex() {
                   color: "var(--muted)",
                   display: "flex",
                   gap: 14,
+                  flexWrap: "wrap",
                 }}
               >
                 {p.href ? (
@@ -393,24 +243,9 @@ function ProjectsIndex() {
 
 function SiteFooter() {
   return (
-    <section
-      id="book"
-      style={{
-        padding: "80px 56px 48px",
-        borderTop: "1.5px solid var(--ink)",
-        background: PAPER_BG,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 24,
-          flexWrap: "wrap",
-        }}
-      >
-        <div className="serif" style={{ fontSize: 28, fontWeight: 500 }}>
+    <section id="book" className="section footer">
+      <div className="footer-row">
+        <div className="serif footer-heading">
           Got a thing that needs building?
         </div>
         <a
@@ -439,7 +274,7 @@ function SiteFooter() {
 
 export default function Home() {
   return (
-    <main style={{ background: PAPER_BG, position: "relative", zIndex: 0 }}>
+    <main style={{ position: "relative", zIndex: 0 }}>
       <EditorialHero />
       <StatsBand />
       <ExperienceGrid />
