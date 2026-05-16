@@ -443,7 +443,7 @@ function SiteFooter() {
           letterSpacing: "0.12em",
         }}
       >
-        FOUNDINGENGINEER.COM · MMXXVI · NO AGENDA · BRING THE MESS
+        FOUNDINGENGINEER.COM · NO AGENDA · BRING THE MESS
       </div>
     </section>
   );
