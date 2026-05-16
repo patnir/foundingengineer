@@ -376,7 +376,22 @@ function ProjectsIndex() {
                   gap: 14,
                 }}
               >
-                <span>{p.url}</span>
+                {p.href ? (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      color: "var(--accent)",
+                      textDecoration: "underline",
+                      textUnderlineOffset: 2,
+                    }}
+                  >
+                    {p.url}
+                  </a>
+                ) : (
+                  <span>{p.url}</span>
+                )}
                 <span>·</span>
                 <span>{p.year}</span>
                 <span>·</span>

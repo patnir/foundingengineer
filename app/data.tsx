@@ -1,8 +1,11 @@
+import type { ReactNode } from "react";
+
 export type Project = {
   n: string;
   title: string;
   blurb: string;
   url: string;
+  href?: string;
   tag: string;
   year: string;
 };
@@ -11,13 +14,19 @@ export type ExperienceEntry = {
   year: string;
   company: string;
   role: string;
-  note: string;
+  note: ReactNode;
   tag: string;
 };
 
 export type Stat = {
   value: string;
   label: string;
+};
+
+const inlineLinkStyle: React.CSSProperties = {
+  color: "var(--accent)",
+  textDecoration: "underline",
+  textUnderlineOffset: 2,
 };
 
 export const PROJECTS: Project[] = [
@@ -27,6 +36,7 @@ export const PROJECTS: Project[] = [
     blurb:
       "A library of original short stories for kids — read-aloud-friendly, illustrated.",
     url: "googoobear.com",
+    href: "https://googoobear.com",
     tag: "Product",
     year: "2025",
   },
@@ -83,7 +93,20 @@ export const EXPERIENCE: ExperienceEntry[] = [
     year: "2021–23",
     company: "Fire",
     role: "Co-Founder · Lead Engineer",
-    note: "Scaled 0 → 100K weekly actives. Built all product + infra. Incubated at Atomic.",
+    note: (
+      <>
+        Scaled 0 → 100K weekly actives. Built all product + infra. Incubated at{" "}
+        <a
+          href="https://www.atomic.vc/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={inlineLinkStyle}
+        >
+          Atomic
+        </a>
+        .
+      </>
+    ),
     tag: "acquired → Kerberus",
   },
   {
