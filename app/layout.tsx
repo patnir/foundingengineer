@@ -22,7 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 const SITE_URL = "https://foundingengineer.com";
-const SITE_TITLE = "foundingengineer.com";
+const SITE_NAME = "foundingengineer.com";
+const SITE_TITLE =
+  "foundingengineer.com — a founding engineer for small businesses";
 const SITE_DESCRIPTION =
   "A founding engineer for small businesses. One person, sleeves up, building it with you.";
 
@@ -44,13 +46,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    siteName: SITE_TITLE,
+    siteName: SITE_NAME,
     images: [
       {
         url: "/assets/og-image.png",
         width: 1200,
         height: 630,
-        alt: SITE_TITLE,
+        alt: SITE_NAME,
       },
     ],
   },
