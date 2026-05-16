@@ -322,6 +322,38 @@ a.project-title-row:hover .project-title {
   color: var(--accent);
 }
 
+/* ── about ────────────────────────────────────────────────────────────── */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: clamp(24px, 4vw, 32px);
+  max-width: 760px;
+  align-items: start;
+}
+@media (min-width: 640px) {
+  .about-grid {
+    grid-template-columns: auto 1fr;
+    gap: 36px;
+    align-items: center;
+  }
+}
+.about-avatar {
+  width: clamp(140px, 20vw, 180px);
+  height: clamp(140px, 20vw, 180px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--ink);
+  display: block;
+}
+.about-copy {
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.55;
+  color: var(--ink);
+  margin: 0;
+}
+
 /* ── footer ───────────────────────────────────────────────────────────── */
 
 .footer-row {

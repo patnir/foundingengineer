@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PROJECTS, EXPERIENCE, STATS } from "./data";
 
 const BOOKING_URL = "https://calendly.com/rahulpatni/30min";
@@ -163,6 +164,49 @@ function ExperienceGrid() {
   );
 }
 
+function AboutSection() {
+  return (
+    <section id="about" className="section">
+      <div className="section-head">
+        <h2
+          className="mono"
+          style={{
+            fontSize: 12,
+            margin: 0,
+            color: "var(--muted)",
+            letterSpacing: "0.12em",
+          }}
+        >
+          ABOUT
+        </h2>
+        <span
+          className="mono"
+          style={{ fontSize: 11, color: "var(--muted)" }}
+        >
+          THE HUMAN BEHIND THIS
+        </span>
+      </div>
+
+      <div className="about-grid">
+        <Image
+          src="/avatar.jpg"
+          alt="Rahul Patni"
+          width={400}
+          height={400}
+          className="about-avatar"
+          priority={false}
+        />
+        <p className="about-copy">
+          I&apos;m Rahul. The point of this page is to put a face to the work
+          above — so you know there&apos;s a real person on the other end, not
+          an agency or a Slack channel. If anything looks like a fit, the
+          fastest way to find out is a 30-minute call.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 function ProjectsIndex() {
   return (
     <section id="work" className="section">
@@ -303,6 +347,7 @@ export default function Home() {
       <EditorialHero />
       <StatsBand />
       <ExperienceGrid />
+      <AboutSection />
       <ProjectsIndex />
       <SiteFooter />
     </main>
