@@ -185,7 +185,7 @@ function ExperienceGrid() {
             letterSpacing: "0.12em",
           }}
         >
-          № 02 · THE RECEIPTS
+          THE RECEIPTS
         </h2>
         <span
           className="mono"
@@ -300,7 +300,7 @@ function ProjectsIndex() {
             letterSpacing: "0.12em",
           }}
         >
-          № 03 · INDEX OF THINGS I&apos;VE SHIPPED ON THE SIDE
+          INDEX OF THINGS I&apos;VE SHIPPED ON THE SIDE
         </h2>
         <span
           className="mono"
