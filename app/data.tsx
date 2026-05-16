@@ -32,16 +32,6 @@ const inlineLinkStyle: React.CSSProperties = {
 export const PROJECTS: Project[] = [
   {
     n: "01",
-    title: "Googoobear",
-    blurb:
-      "A library of original short stories for kids — read-aloud-friendly, illustrated.",
-    url: "googoobear.com",
-    href: "https://googoobear.com",
-    tag: "Product",
-    year: "2025",
-  },
-  {
-    n: "02",
     title: "Grateful",
     blurb: "Social app for daily gratitude. Shipped to App Store + Play Store.",
     url: "grateful.so",
@@ -49,12 +39,22 @@ export const PROJECTS: Project[] = [
     year: "2025",
   },
   {
-    n: "03",
+    n: "02",
     title: "Dials",
     blurb: "Helping independent watch stores spin up bespoke storefronts.",
     url: "dials.dev",
     tag: "Client",
     year: "2024",
+  },
+  {
+    n: "03",
+    title: "Googoobear",
+    blurb:
+      "A library of original short stories for kids — read-aloud-friendly, illustrated.",
+    url: "googoobear.com",
+    href: "https://googoobear.com",
+    tag: "Product",
+    year: "2025",
   },
   {
     n: "04",
