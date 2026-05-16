@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1a1714;
+  --paper: #fbfaf5;
+  --paper-2: #f3efe6;
+  --muted: #6a625a;
+  --line: #1a1714;
+  --accent: #d2532a;
+  --bg: #f6f2ea;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-inter), -apple-system, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  min-height: 100dvh;
+}
+
+/* coarse paper noise — sits above content as a soft tint */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 30% 10%, rgba(255, 240, 200, 0.25), transparent 60%),
+    radial-gradient(ellipse at 90% 90%, rgba(220, 200, 180, 0.25), transparent 60%);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* ── wireframe primitives ─────────────────────────────────────────────── */
+
+.mono {
+  font-family: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
+}
+
+.serif {
+  font-family: var(--font-serif), "Fraunces", Georgia, serif;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1.5px solid var(--ink);
+  font-size: 11px;
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+}
+.pill.solid {
+  background: var(--ink);
+  color: var(--paper);
+}
+.pill.accent {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: inherit;
+  transition: opacity 120ms ease;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+}
+.btn:hover {
+  opacity: 0.92;
+}
+
+/* drawn underline used in the hero */
+.underline-sketch {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 6' preserveAspectRatio='none'><path d='M2 4 C 30 1, 70 6, 118 3' stroke='%23d2532a' stroke-width='2' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 6px;
+  padding-bottom: 6px;
+}
+
+/* top nav */
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 56px;
+}
+.topnav .logo {
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.topnav .links {
+  display: flex;
+  gap: 28px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.topnav .links a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+.topnav .links a:hover {
+  color: var(--ink);
 }
