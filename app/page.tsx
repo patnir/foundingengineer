@@ -393,8 +393,6 @@ function ProjectsIndex() {
                   <span>{p.url}</span>
                 )}
                 <span>·</span>
-                <span>{p.year}</span>
-                <span>·</span>
                 <span>{p.tag}</span>
               </div>
             </div>
