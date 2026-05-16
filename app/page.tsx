@@ -29,18 +29,6 @@ function EditorialHero() {
         </div>
       </div>
 
-      <div
-        className="mono"
-        style={{
-          fontSize: 11,
-          color: "var(--muted)",
-          letterSpacing: "0.12em",
-          marginBottom: 18,
-        }}
-      >
-        № 01 · A NOTE ON BUILDING THINGS FOR OTHER PEOPLE
-      </div>
-
       <h1
         className="serif"
         style={{
