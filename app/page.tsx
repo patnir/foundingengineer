@@ -125,7 +125,12 @@ function StatsBand() {
         background: PAPER_BG,
       }}
     >
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: `repeat(${STATS.length}, 1fr)`,
+        }}
+      >
         {STATS.map((s, i) => (
           <div
             key={s.label}
@@ -262,22 +267,12 @@ function ExperienceGrid() {
                 {e.company}
               </div>
               <div
-                className="mono"
-                style={{
-                  fontSize: 11,
-                  color: "var(--ink)",
-                  marginTop: 8,
-                  marginBottom: 14,
-                }}
-              >
-                {e.role}
-              </div>
-              <div
                 style={{
                   fontSize: 13.5,
                   color: "var(--ink)",
                   lineHeight: 1.55,
                   maxWidth: 460,
+                  marginTop: 16,
                 }}
               >
                 {e.note}

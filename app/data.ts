@@ -97,7 +97,5 @@ export const EXPERIENCE: ExperienceEntry[] = [
 
 export const STATS: Stat[] = [
   { value: "2", label: "startups · both acquired" },
-  { value: "100K", label: "weekly actives shipped (Fire)" },
-  { value: "$80B", label: "AUM on infra I built (Ridgeline)" },
   { value: "0→1", label: "what I do best" },
 ];
