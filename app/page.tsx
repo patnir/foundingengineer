@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { CAPABILITIES, EXPERIENCE, PROJECTS } from "./data";
 
-const BOOKING_URL = "https://calendly.com/rahulpatni/30min";
-
 function EditorialHero() {
   return (
     <section className="section hero no-top-border">
@@ -21,9 +19,6 @@ function EditorialHero() {
             rel="noopener noreferrer"
           >
             blog ↗
-          </a>
-          <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
-            book a call ↗
           </a>
         </div>
       </div>
@@ -64,22 +59,6 @@ function EditorialHero() {
       </div>
 
       <div className="hero-cta-row">
-        <div className="hero-cta-left">
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn"
-          >
-            Book a call →
-          </a>
-          <span
-            className="mono"
-            style={{ fontSize: 12, color: "var(--muted)" }}
-          >
-            ● accepting · 1 of 2 slots open · 2026
-          </span>
-        </div>
         <div className="hero-socials">
           <a
             href="https://github.com/patnir"
@@ -334,30 +313,16 @@ function ProjectsIndex() {
 
 function SiteFooter() {
   return (
-    <section id="book" className="section footer">
-      <div className="footer-row">
-        <div className="serif footer-heading">
-          Got a thing that needs building?
-        </div>
-        <a
-          href={BOOKING_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn"
-        >
-          Book 30 min on Calendly
-        </a>
-      </div>
+    <section className="section footer">
       <div
         className="mono"
         style={{
           fontSize: 11,
           color: "var(--muted)",
-          marginTop: 24,
           letterSpacing: "0.12em",
         }}
       >
-        FOUNDINGENGINEER.COM · NO AGENDA · BRING THE MESS
+        FOUNDINGENGINEER.COM
       </div>
     </section>
   );

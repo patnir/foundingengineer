@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         destination: "/resume.pdf",
         permanent: false,
       },
+      {
+        source: "/chat",
+        destination: "https://calendly.com/rahulpatni/30min",
+        permanent: false,
+      },
     ];
   },
 };
